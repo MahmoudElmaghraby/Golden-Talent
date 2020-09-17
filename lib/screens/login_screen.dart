@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:golden_talent/screens/home_screen.dart';
+import 'package:golden_talent/screens/signup_screen.dart';
+import 'package:golden_talent/widgets/my_text_field.dart';
 
 class LoginScreen extends StatelessWidget {
   static String id = '/LoginScreen';
 
   @override
   Widget build(BuildContext context) {
-    final screenHeight = MediaQuery.of(context).size.height;
-    final screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         title: Text('Golden Talent'),
@@ -15,30 +18,16 @@ class LoginScreen extends StatelessWidget {
         padding: const EdgeInsets.only(top: 20, left: 16, right: 16),
         child: ListView(
           children: [
-            TextField(
-              decoration: InputDecoration(
-                hintText: 'Username',
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-              ),
+            MyTextField(
+              isSecure: false,
+              hint: 'new User name',
             ),
             SizedBox(
               height: 16,
             ),
-            TextField(
-              decoration: InputDecoration(
-                hintText: 'Password',
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-              ),
+            MyTextField(
+              isSecure: true,
+              hint: 'Password',
             ),
             SizedBox(
               height: 32,
@@ -50,7 +39,9 @@ class LoginScreen extends StatelessWidget {
                   FlatButton(
                     color: Colors.blue,
                     textColor: Colors.white,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, HomeScreen.id);
+                    },
                     child: Text('Login'),
                   ),
                   SizedBox(
@@ -63,8 +54,19 @@ class LoginScreen extends StatelessWidget {
                   FlatButton(
                     color: Colors.blue,
                     textColor: Colors.white,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, SignupScreen.id);
+                    },
                     child: Text('Sign up'),
+                  ),
+                  SizedBox(
+                    height: 16,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, HomeScreen.id);
+                    },
+                    child: Text('Skip'),
                   ),
                 ],
               ),
