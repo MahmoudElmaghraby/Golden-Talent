@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
+import 'package:golden_talent/screens/drawer_screen.dart';
+import 'package:golden_talent/widgets/course_item_card.dart';
 
 class HomeScreen extends StatelessWidget {
   static String id = '/HomeScreen';
@@ -8,7 +10,9 @@ class HomeScreen extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      drawer: Drawer(),
+      drawer: Drawer(
+        child: DrawerScreen(),
+      ),
       appBar: AppBar(
         title: Text('Golden Talent'),
       ),
@@ -80,6 +84,17 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
+            Text(
+              'Upcoming Events',
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
+            ),
+            CourseItemCard(),
+            CourseItemCard(),
+            CourseItemCard(),
           ],
         ),
       ),
