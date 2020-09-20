@@ -46,23 +46,23 @@ class DrawerScreen extends StatelessWidget {
             itemText: 'Home',
           ),
           NavListTileItem(
-            itemIcon: Icons.home,
+            itemIcon: Icons.assignment_late,
             itemText: 'About us',
           ),
           NavListTileItem(
-            itemIcon: Icons.home,
+            itemIcon: Icons.book,
             itemText: 'Courses',
           ),
           NavListTileItem(
-            itemIcon: Icons.home,
+            itemIcon: Icons.announcement,
             itemText: 'News',
           ),
           NavListTileItem(
-            itemIcon: Icons.home,
+            itemIcon: Icons.perm_contact_calendar,
             itemText: 'Contact',
           ),
           NavListTileItem(
-            itemIcon: Icons.dashboard,
+            itemIcon: Icons.exit_to_app,
             itemText: 'Logout',
           ),
           Divider(
@@ -76,17 +76,38 @@ class DrawerScreen extends StatelessWidget {
                   fontSize: 15,
                 ),
               ),
-              NavListTileItem(
-                itemIcon: Icons.face,
-                itemText: 'Follow us on facebook',
+              ListTile(
+                leading: Image.asset(
+                  'assets/images/facebook1.png',
+                  height: screenHeight * 0.1,
+                  width: screenWidth * 0.08,
+                ),
+                title: Text(
+                  'Follow us on facebook',
+                  style: TextStyle(fontSize: 18),
+                ),
               ),
-              NavListTileItem(
-                itemIcon: Icons.face,
-                itemText: 'Follow us on Linkedin',
+              ListTile(
+                leading: Image.asset(
+                  'assets/images/linkedin1.png',
+                  height: screenHeight * 0.1,
+                  width: screenWidth * 0.08,
+                ),
+                title: Text(
+                  'Follow us on Linkedin',
+                  style: TextStyle(fontSize: 18),
+                ),
               ),
-              NavListTileItem(
-                itemIcon: Icons.face,
-                itemText: 'Follow us on Twitter',
+              ListTile(
+                leading: Image.asset(
+                  'assets/images/tweeter1.png',
+                  height: screenHeight * 0.1,
+                  width: screenWidth * 0.08,
+                ),
+                title: Text(
+                  'Follow us on Twitter',
+                  style: TextStyle(fontSize: 18),
+                ),
               ),
             ],
           ),

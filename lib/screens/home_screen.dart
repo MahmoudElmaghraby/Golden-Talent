@@ -11,7 +11,9 @@ class HomeScreen extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       drawer: Drawer(
-        child: DrawerScreen(),
+        child: SafeArea(
+          child: DrawerScreen(),
+        ),
       ),
       appBar: AppBar(
         title: Text('Golden Talent'),
@@ -37,7 +39,7 @@ class HomeScreen extends StatelessWidget {
             ),
             Container(
               color: Colors.blue,
-              height: screenHeight * 0.3,
+              height: screenHeight * 0.4,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -84,17 +86,20 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-            Text(
-              'Upcoming Events',
-              style: TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                'Upcoming Events',
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
               ),
             ),
-            CourseItemCard(),
-            CourseItemCard(),
-            CourseItemCard(),
+            CourseItemCard('assets/images/course_1.jpg'),
+            CourseItemCard('assets/images/course_2.jpg'),
+            CourseItemCard('assets/images/course_3.jpg'),
           ],
         ),
       ),
